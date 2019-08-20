@@ -45,7 +45,6 @@ distrupt = y => {
 
   for (i = 1; i < 9; i++) {
     document.querySelector(`.menu-index${i}`).style.display = "none";
-    console.log("g");
   }
   document.querySelector(`.menu-index${y}`).style.display = "flex";
   for (i = 1; i < y; i++) {
@@ -60,3 +59,28 @@ distrupt = y => {
   //
   //timer rerun
 };
+
+scrolleft = () => {
+  let elmnt = document.querySelector(".pr1");
+  elmnt.scrollIntoView();
+};
+scrolright = () => {
+  let elmnt = document.querySelector(".pr2");
+  elmnt.scrollIntoView();
+};
+
+var inter = new IntersectionObserver(entries => {
+  if (entries[0].intersectionRatio >= 0) {
+    document.querySelector(".scroll-left").style.backgroundColor = "#ccc";
+    document.querySelector(".scroll-right").style.backgroundColor = "#616161";
+  }
+});
+var inter2 = new IntersectionObserver(entries => {
+  if (entries[0].intersectionRatio >= 0) {
+    document.querySelector(".scroll-right").style.backgroundColor = "#ccc";
+    document.querySelector(".scroll-left").style.backgroundColor = "#616161";
+  }
+});
+
+inter.observe(document.querySelector(".pr1"));
+inter2.observe(document.querySelector(".pr2"));
