@@ -61,24 +61,26 @@ distrupt = y => {
 };
 
 scrolleft = () => {
-  let elmnt = document.querySelector(".pr1");
-  elmnt.scrollIntoView();
+  let elmnt = document.querySelector(".scroll-prdct");
+
+  elmnt.scrollTo(0, 0);
 };
 scrolright = () => {
-  let elmnt = document.querySelector(".pr2");
-  elmnt.scrollIntoView();
+  let elmnt = document.querySelector(".scroll-prdct");
+
+  elmnt.scrollTo(2500, 0);
 };
 
 var inter = new IntersectionObserver(entries => {
   if (entries[0].intersectionRatio >= 0) {
     document.querySelector(".scroll-left").style.backgroundColor = "#ccc";
-    document.querySelector(".scroll-right").style.backgroundColor = "#616161";
+    document.querySelector(".scroll-right").style.backgroundColor = "#8a8989";
   }
 });
 var inter2 = new IntersectionObserver(entries => {
   if (entries[0].intersectionRatio >= 0) {
     document.querySelector(".scroll-right").style.backgroundColor = "#ccc";
-    document.querySelector(".scroll-left").style.backgroundColor = "#616161";
+    document.querySelector(".scroll-left").style.backgroundColor = "#8a8989";
   }
 });
 
