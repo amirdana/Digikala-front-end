@@ -63,7 +63,7 @@ distrupt = y => {
 scrolleft = () => {
   let elmnt = document.querySelector(".scroll-prdct");
 
-  elmnt.scrollTo(0, 0);
+  elmnt.scrollTo(400, 0);
 };
 scrolright = () => {
   let elmnt = document.querySelector(".scroll-prdct");
